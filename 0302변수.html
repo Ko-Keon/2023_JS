@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--자바스크립트-->
+    <script>
+        // 변수는 값을 담아서 저장 가능//
+        let num = 20;
+        // = 기호는 오른쪽에 작성된 값을 왼쪽에 할당//
+        let numTemp = num;
+        //오른쪽에 식이 들어가있으면 그 내용을 다 실행하고 할당//
+        let sum = numTemp+num;
+
+        console.log (num+10);
+                //복합 대입 연산자//
+        let numOper = 0;
+        //현재 변수에 1을 더해줄 때//
+        numOper = numOper+1; //numOper = 1//
+        numOper += 1; //numOper = 2//
+        console.log(numOper);
+        numOper *= 3;
+        console.log(numOper);
+        //증감연산자 : 1씩 증가 감소//
+        numOper++;
+        console.log(numOper);
+        //후위연산자 : 가장 마지막에 계산//
+        //실행 순서 : console.log -> numOper++//
+        console.log(numOper++);
+        console.log(numOper);
+        //전위연산자 : 가장 먼저 계산//
+        //실행 순서 : ++numOper -> console.log//
+        console.log(++numOper);
+        console.log(numOper);
+        
+    </script>
+</body>
+</html>
