@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //조건문 : 조건에 따라서 문장이 달라진다
+    //순서도를 통해서 조건문 그림을 확인할 수 있다.
+    //참(true)만 있는 if문
+    document.write("<h1>if</h1>");
+    if(true) {
+        console.log("이 조건문은 참입니다.");
+        document.write("<h1>이 조건문은 참입니다.</h1>");
+    }
+    document.write("<p>if문에 상관없이 실행되는 내용입니다.</p>");
+
+    //조건문에서 조건식이 중요하다.
+    //조건식 : 계산결과 boolean 값으로 출력
+    let num = "문자";
+    if(isNaN(num)) {
+        document.write(
+            "<p>"
+            +"값이 NaN입니다."
+            +"</p>"
+        );
+    }
+    //1. 문제 안에 조건문을 사용하는지 확인 (~이면)
+    //2. 조건식 확인 (비교, 참거짓)
+    //3. 참일 떄 실행할 문장
+    let score = 70; //문제 안에서 변할 수 있는 값
+    if(score>=60) {
+        document.write("<p>합격입니다</p>");
+    }
+
+    document.write("<hr>");
+    document.write("<h1>if-else</h1>");
+    //if-else 조건문
+    //참,거짓을 다르게 작성할 때 사용
+    let isSwitch = false;
+    if(isSwitch) {
+        document.write("<p>전등이 켜졌습니다.</p>");
+        //조건식이 참일 때
+    }
+    else {
+        document.write("<p>전등이 꺼졌습니다.</p>");
+        //조건식이 거짓일 때
+    }
+
+    //문자열로 조건식 작성 (==)
+    //word = "의자", 다를때 "아니다" 출력
+    let word = "의자";
+    if(word=="의자") {
+        document.write("<p>같다</p>")
+    }
+    else {
+        document.write("<p>다르다</p>")
+    }
+
+    document.write("<hr>");
+    document.write("<h1>중첩 조건문</h1>");
+    //조건이 여러개 있을 때, if안에 if사용
+    //첫 번째 조건 : 지하철이 파업했다.
+    //두 번째 조건 : 버스가 파업했다.
+    let subwayWalkout = true; // true 지하철 파업
+    let busWalkout = true; // true 버스 파업
+    if (subwayWalkout) {
+        if(busWalkout) {
+            document.write("<p>택시틑 탄다.</p>");
+        }
+        else {
+            document.write("<p>버스를 탄다.</p>");
+        }
+    }
+    else {
+        document.write("<p>지하철을 탄다.</p>");
+    }
+    //if-else if조건문
+    //1조건 지하철파업 > 2조건 버스파업 > 택시
+    if(subwayWalkout==false) {
+        document.write("<p>지하철을 탄다</p>");
+    }
+    else if (busWalkout==false) {
+        document.write("<p>버스를 탄다.</p>");
+    }
+    else {
+        document.write("<p>택시를 탄다.</p>");
+    }
+    </script>
+</body>
+</html>

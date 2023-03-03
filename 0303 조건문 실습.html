@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //if 조건문 실습
+        let check = true;
+        if (check) {
+            document.write("<p>확인하였습니다.</p>");
+        } 
+
+        let word = "의자";
+        if (word=="의자") {
+            document.write("<p>맞습니다</p>");
+        }
+        
+        //if-else 조건문 실습
+        let money = 1600
+        if(money>1500) {
+            document.write("<p>버스를 타고갑니다</p>");
+        }
+        else {
+            document.write("<p>걸어갑니다</p>");
+        }
+
+        let isCard = true;
+        if(isCard) {
+            document.write("<p>버스를 타고갑니다</p>");
+        }
+        else {
+            document.write("<p>걸어갑니다</p>");
+        }
+        
+        //if- else-if else- 조건문 실습
+        // 1.변수
+        // 2.조건식 / 참일때 실행할 내용 : 
+        let dust = 100;
+        if (dust<=30) {
+            document.write("<p>좋음</p>");
+        }
+        else if (dust<=80) {
+            document.write("<p>보통</p>");
+        }
+        else if(dust<=150) {
+            document.write("<p>나쁨</p>");
+        }
+        else {
+            document.write("<p>매우나쁨</p>");
+        }
+
+        //if else if 연습
+        // 1.변수 : mathScore
+        // 2. 조건식 / 참 : 90점 이상 / A, 80이상 / B, 70이상 / C 그 이하 / F
+        let mathScore = 84;
+        if (mathScore>=90) {
+            document.write("<p>A</p>");
+        }
+        else if (mathScore<90 && mathScore>=80) {
+            document.write("<p>B</p>");
+        }
+        else if (mathScore>=70) {
+            document.write("<p>C</p>");
+        }
+        else {
+            document.write("<p>F</p>");
+        }
+
+        //홀수 짝수 판별하기
+        let num1 = 100;
+        if (num1%2==0) {
+            document.write("<p>짝수입니다</p>");
+        }
+        else {
+            document.write("<p>홀수입니다</p>");
+        }
+        
+        //음수 양수 0 구별하기
+        let num2 = 0;
+        if (num2==0) {
+            document.write("<p>0입니다</p>");
+        }
+        else if (num2>0) {
+            document.write("<p>양수입니다</p>");
+        }
+        else {
+            document.write("<p>음수입니다</p>");
+        }
+        
+        //구매한 가격을 입력하면 할인율이 적용된 금액 출력하기
+        //10000원이상 5%, 50000원이상 10%, 100000원 이상 20%
+        let price = prompt("금액을 입력하세요");
+        if(price>=100000) {
+            document.write(price-(price*0.2));
+        }
+        else if (price>=50000) {
+            document.write(price-(price*0.1));
+        }
+        else if (price>=10000){
+            document.write(price-(price*0.05));
+        }
+        else {
+            document.write(price);
+        }
+    </script>
+</body>
+</html>
