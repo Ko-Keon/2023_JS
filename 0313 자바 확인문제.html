@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 논리연산자
+        let num = 160;
+        document.write(`<p>${num<100 || num>170}</p>`)
+        document.write(`<p>${num>140 && num<170}</p>`)
+        document.write(`<p>${!(num<120)}</p>`)
+        
+        // 1-10까지 출력
+        for(i=1; i<=10; i++) {
+            document.write(`<p>${i}</p>`)
+        }
+
+        // 요소값 출력(for of)
+        let numArray = [1,2,3,4]
+        for (let num of numArray) {
+            document.write(`<p>${num}</p>`)
+        }
+
+        // 요소값 출력(for in)
+        let flowerArray = ["해바라기", "튤립", "장미"];
+        for (let flower in flowerArray) {
+            document.write(`<p>${flowerArray[flower]}</p>`)
+        }
+
+        // 반복문 조건문 혼합 6의 약수구하기
+        function factorOfSix (num) {
+            let count = 0;
+            for (let i=0; i<=num; i++) {
+                if(num%i ==0) {
+                document.write(`<p>${i}</p>`)
+                count++;
+                }
+            }
+            return count;
+        }
+        factorOfSix(6);
+        
+        // 매개 변수를 하나 넣으면 제곱해주고 2개 넣으면 <첫변수>의 <둘째변수> 제곱 만큼
+        function power(a,b) {
+            if(b) {
+                let result = 1;
+                for (let i=0; i<b; i++) {
+                    result *= a;
+                }
+                return result;
+            }
+            else {
+                return a*a;
+            }
+        }
+        document.write(`<p>${power(2)}</p>`)
+        document.write(`<p>${power(2,3)}</p>`)
+
+        // maps라는 속성값을 가져오기 위해 접근하는 방법
+        const myStorage = {
+        car: {
+        inside: {
+            gloveBox: "maps",
+            passengerSeat: "crumbs"
+                },
+        outside: {
+            trunk: "jack"
+                }   
+            }
+        };
+        document.write(`<p>${myStorage.car.inside.gloveBox}</p>`)
+
+        // 리터럴 객체 생선
+        let NatureOfCode = new Object();
+        NatureOfCode.name = "Nature of Code"
+        NatureOfCode.price = "30000DNJS"
+        NatureOfCode.writer = "다니엘 쉬프만"
+        NatureOfCode.ISBN = "9788968481901"
+        NatureOfCode.page = "620페이지"
+        console.log(NatureOfCode)
+        
+        // 생성자 함수를 이용한 객체 생성
+        function Product(name, pay) {
+            this.name = name;
+            this.pay = pay;
+            this.keep = function() {
+                return this.name + "을 보관했습니다"
+            }
+            this.getPay = () => this.pay; 
+        }
+        let book = new Product("book",6000);
+        let pencil = new Product("pencil",2000);
+        let hat = new Product("hat",8000);
+
+        // 생성자 함수 User
+        function User(id, money) {
+            this.id = id;
+            this.money = money;
+            this.buyList = [];
+            this.charge = function(plusMoney) {
+                return this.money += plusMoney
+            }
+            this.buy = function(product) {
+                // User의 money에서 product.getPay()갑 계산
+                // this = User
+                this.money -= product.getPay();
+                // product.name의 값을 buyList 배열의 메소드인 push()에 추가
+                // 미리 만들어둔 객체의 메소드나 속성을 사용할 수 있다.
+                this.buyList.push(product.name);
+            }
+        }
+        let harry = new User("harry",10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 다양한 객체의 사용법
+        // 객체 안에 객체를 넣어서 사용
+        let memo = {
+            title : "오늘 할 일",
+            todo : {
+                morning : ["청소", "준비"],
+                afternoon : ["수업"],
+                evening : ["정리", "독서"]
+            }
+        }
+        // 객체 안에 객체의 값에 접근하는 방법
+        document.write(`<p>${memo.todo.morning[0]}</p>`);
+
+        // 배열 안에 객체
+        let todoList = [
+            {time : "아침", todo : "청소"},
+            {time : "오전", todo : "수업"},
+            {time : "오후", todo : "독서"},   
+        ];
+        // 배열 안에 객체의 속성값을 찾는법
+        document.write(`<p>${todoList[2].todo}</p>`)
+
+        // 객체를 속성으로 갖는 개체 실습
+        let myMovie = {
+            title : "킹메이커",
+            time : "120",
+            rate : "8.84",
+            coment : {
+                id : "movieMaster",
+                content : "good"
+            } 
+    } 
+        
+        // 동물병원 진료차트
+        // 생성자 함수
+        function AnimalChart(name, kind, age) {
+            this.name = name;
+            this.kind = kind;
+            this.age = age;
+            this.sickness = "";
+            this.condition = "";
+            // 메소드
+            // receive 병명과 상태를 기록
+            this.receive = function(sickness, condition) {
+                this.sickness = sickness;
+                this.condition = condition;
+                return this.sickness+"/"+this.condition
+            }
+            // 이름, 동물 종류, 나이, 병명, 상태 출력
+            // 메소드(함수)를 제외하고 출력
+            // (반복)전체 출력 : for in 객체
+            // (조건)typeof 자료형을 확인하고 출력
+            this.confirm = function() {
+                let allString = "";
+                // 생성자 함수이기떄문에 this를 통해서 생성 될 객체에 임의로 접근
+                for (let i in this) {
+                    if(typeof this[i] != "function") {
+                        console.log(typeof this[i]);
+                        allString += this[i]
+                    }
+                }
+                return allString;
+            }
+        }
+
+        let first = new AnimalChart("홍길동","강아지",1)
+        first.receive("감기", "나쁨")
+        document.write(first.confirm())
+
+        let AnimalChartList = [
+            new AnimalChart("홍길동", "강아지", 1),
+            new AnimalChart("성춘향", "고양이", 3)
+        ]
+
+    </script>
+</body>
+</html>
