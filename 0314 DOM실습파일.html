@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>수정하기 전 제목입니다</h1>
+    <div>
+        <ul>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ul>
+        <ol>
+            <li>첫번째 내용입니다</li>
+            <li>두번째 내용입니다</li>
+            <li>세번째 내용입니다</li>
+            <li>네번째 내용입니다</li>
+        </ol>
+    </div>
+    <div class="main">
+        <p><span>빈 공간</span> 입니다</p>
+    </div>
+    <div class="footer">
+        <p>푸터영역입니다</p>
+    </div>
+
+    <script>
+        // h1 태그 내용, 배경, 글자 색 수정
+        let h1 = document.querySelector("h1")
+        h1.innerHTML = "DOM 이용한 수정"
+        h1.style.backgroundColor = "lightgray"
+        h1.style.color = "blue"
+
+        // li에 새로 요소 추가 후 내용 작성
+        let element = document.createElement("li")
+        let ul = document.querySelector("ul")
+        ul.appendChild(element)
+        ul.lastElementChild.innerHTML = ("새로 추가한 노드 요소입니다")
+
+        // ul안에 첫 번째 노드 삭제
+        ul.removeChild(ul.firstElementChild)
+
+        // ol 안에 첫 번째 내용 수정
+        let ol = document.querySelector("ol")
+        ol.firstElementChild.innerHTML = "내용을 바꾸었습니다"
+        // ol안에 두 번쨰, 네 번째 내용 삭제
+        ol.removeChild(ol.lastElementChild)
+        ol.removeChild(ol.childNodes[3])
+
+        // div - main 클래스 span 안에 p 태그 색변경
+        let span = document.querySelector("span")
+        span.style.color = "red"
+
+        // p 태그 내용 두 개 복사하기
+        let main = document.querySelector(".main")
+        let p = document.querySelector(".main>p")
+        let sapnCopy = p.cloneNode(true)
+        // main - p태그를 2개 복사
+        main.appendChild(sapnCopy.cloneNode(true))
+        main.appendChild(sapnCopy.cloneNode(true))
+
+    </script>
+
+</body>
+</html>
