@@ -49,7 +49,9 @@
                 const promise = await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=ktUxlKytZlqjfiuEVKgUJRs89UYf5jhCWaGrOP8n02R9PKJi9cKQcH1nvwTE2Uuo");
                 const response = await promise.json();
                 const ul = document.querySelector("#data-list")
-                // 전역변수에 response 값을 저장해서 사용
+                // 전역변수에 response 값을 저장해서 전달 가능
+                // 함수에서 전역변수 값을 저장 및 수정할 때
+                // 순서 확인하고 사용하기 (언제 값이 들어오는지)
                 data = response;
 
                 // i값을 통해서 인덱스의 위치 접근
